@@ -1,11 +1,5 @@
 source ~/vimfiles/bundles.vim
 
-" GUI and color scheme
-let g:molokai_original=1
-colorscheme molokai
-set linespace=0
-set fillchars=""
-
 " Maximize on startup (Win32)
 if has("win32")
     autocmd GUIEnter * simalt ~x
@@ -13,10 +7,18 @@ if has("win32")
     set directory=c:/windows/temp/vim//
     " I have GNU Grep installed.
     set grepprg=grep\ -nH
+    let g:molokai_original=1
 elseif has("unix")
     set guifont=Consolas\ for\ Powerline\ 9
     let g:Powerline_symbols="fancy"
+    set t_Co=256
+    let g:rehash256=1
 endif
+
+" GUI and color scheme
+colorscheme molokai
+set linespace=0
+set fillchars=""
 
 " UTF-8!
 set encoding=utf-8
