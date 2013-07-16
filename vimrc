@@ -1,0 +1,72 @@
+source ~/vimfiles/bundles.vim
+
+" GUI and color scheme
+let g:molokai_original=1
+colorscheme molokai
+set linespace=0
+set fillchars=""
+
+" Maximize on startup (Win32)
+if has("win32")
+    autocmd GUIEnter * simalt ~x
+    " Put swap files in temp
+    set directory=c:/windows/temp/vim//
+    " I have GNU Grep installed.
+    set grepprg=grep\ -nH
+endif
+
+" Turn off menus, toolbars and scrollbars
+set guioptions-=m
+set guioptions-=T
+set guioptions-=L
+
+" Slashes in paths everywhere
+set shellslash
+
+" Various GUI/editing options
+set cpoptions+=$
+set backspace=indent,eol,start
+set nowrap
+set ruler
+set showcmd
+set showmode
+set wildmenu
+syntax on
+
+" Tab/indent settings
+set autoindent
+set expandtab
+set smarttab
+set cino=:0l1g0t0(0
+
+" Highlight search
+set hlsearch
+
+" No point in backup files, everything is version controlled!
+set nobackup
+set noswapfile
+
+set laststatus=2
+set cmdheight=2
+
+" Hidden buffers don't ned to be unloaded
+set hidden
+
+" NERDTree config
+let NERDTreeShowBookmarks=1
+nmap <F10> :NERDTreeToggle<CR>
+
+" Quickfix mappings
+nmap <F8> :cnext<CR>
+nmap <S-F8> :cprevious<CR>
+nmap <C-S-F> :noautocmd vimgrep 
+imap <C-S-F> :noautocmd vimgrep
+
+" Turn off autohighlight by hitting return
+nnoremap <CR> :nohl<CR><CR>
+
+" DOS Edit-style copy & paste to system buffer.
+vmap <C-Insert> "*y<CR>
+vmap <C-Delete> "*d<CR>
+nmap <S-Insert> "*P<CR>
+vmap <S-Insert> "*P<CR>
