@@ -13,7 +13,13 @@ if has("win32")
     set directory=c:/windows/temp/vim//
     " I have GNU Grep installed.
     set grepprg=grep\ -nH
+elseif has("unix")
+    set guifont=Consolas\ for\ Powerline\ 9
+    let g:Powerline_symbols="fancy"
 endif
+
+" UTF-8!
+set encoding=utf-8
 
 " Turn off menus, toolbars and scrollbars
 set guioptions-=m
