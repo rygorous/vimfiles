@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/vimfiles/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -15,5 +15,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'spolu/dwm.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'tikhomirov/vim-glsl'
 
 filetype plugin indent on

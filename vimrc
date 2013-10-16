@@ -7,7 +7,9 @@ if has("win32")
     set directory=c:/windows/temp/vim//
     " I have GNU Grep installed.
     set grepprg=grep\ -nH
+    set guifont=Consolas_for_Powerline_FixedD:h9
     let g:molokai_original=1
+    let g:Powerline_symbols="fancy"
 elseif has("unix")
     set guifont=Consolas\ for\ Powerline\ 9
     let g:Powerline_symbols="fancy"
