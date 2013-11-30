@@ -16,5 +16,6 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'spolu/dwm.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tikhomirov/vim-glsl'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on
