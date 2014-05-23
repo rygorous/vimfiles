@@ -62,6 +62,9 @@ set cmdheight=2
 " Hidden buffers don't ned to be unloaded
 set hidden
 
+" Wildcard ignores
+set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb
+
 " NERDTree config
 let NERDTreeShowBookmarks=1
 nmap <F10> :NERDTreeToggle<CR>
