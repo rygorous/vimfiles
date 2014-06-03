@@ -89,3 +89,7 @@ vmap <C-Insert> "*y<CR>
 vmap <C-Delete> "*d<CR>
 nmap <S-Insert> "*P<CR>
 vmap <S-Insert> "*P<CR>
+
+" RAD locals
+command Cdb cd c:/devel/projects/bink
+command Cdg cd c:/devel/projects/g
