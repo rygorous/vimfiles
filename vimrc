@@ -93,3 +93,4 @@ vmap <S-Insert> "*P<CR>
 " RAD locals
 command Cdb cd c:/devel/projects/bink
 command Cdg cd c:/devel/projects/g
+command Cdt cd c:/devel/projects/telemetry
