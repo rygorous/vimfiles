@@ -65,6 +65,12 @@ set hidden
 " Wildcard ignores
 set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb
 
+" Use The Silver Searcher when available
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+endif
+
 " NERDTree config
 let NERDTreeShowBookmarks=1
 nmap <F10> :NERDTreeToggle<CR>
