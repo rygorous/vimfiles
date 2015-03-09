@@ -18,7 +18,8 @@ elseif has("unix")
 endif
 
 " GUI and color scheme
-colorscheme molokai
+"colorscheme molokai
+colorscheme zenburn
 set linespace=0
 set fillchars=""
 
@@ -63,7 +64,7 @@ set cmdheight=2
 set hidden
 
 " Wildcard ignores
-set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb
+set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb,*.map
 
 " Use The Silver Searcher when available
 if executable("ag")
@@ -96,4 +97,4 @@ command PE !p4 edit %
 command PR !p4 revert %
 command Cdb cd c:/devel/projects/bink
 command Cdg cd c:/devel/projects/g
-command Cdt cd c:/devel/projects/telemetry
+command Cdt cd c:/devel/projects/telemetry_dev2
