@@ -92,9 +92,7 @@ nmap <S-Insert> "*P<CR>
 vmap <S-Insert> "*P<CR>
 
 " RAD locals
-command PA !p4 add %
-command PE !p4 edit %
-command PR !p4 revert %
 command Cdb cd c:/devel/projects/bink
 command Cdg cd c:/devel/projects/g
-command Cdt cd c:/devel/projects/telemetry_dev2
+
+let g:ctrlp_working_path_mode = 0
