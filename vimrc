@@ -95,4 +95,10 @@ vmap <S-Insert> "*P<CR>
 command Cdb cd c:/devel/projects/bink
 command Cdg cd c:/devel/projects/g
 
+" Indent styles
+command CbInd set ts=4 sts=4 sw=4 noet
+command FgInd set ts=4 sts=4 sw=4 et
+command JrInd set ts=2 sts=2 sw=2 et
+command SbInd set ts=3 sts=3 sw=3 et
+
 let g:ctrlp_working_path_mode = 0
