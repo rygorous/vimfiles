@@ -66,10 +66,10 @@ set hidden
 " Wildcard ignores
 set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb,*.map
 
-" Use The Silver Searcher when available
-if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+" Use Ripgrep when available
+if executable("rg")
+    set grepprg=rg\ --color\ never
+    let g:ctrlp_user_command = 'rg --files --color never -g "" %s'
 endif
 
 " NERDTree config
@@ -94,6 +94,7 @@ vmap <S-Insert> "*P<CR>
 " RAD locals
 command Cdb cd c:/devel/projects/bink
 command Cdg cd c:/devel/projects/g
+command Cod cd c:/devel/projects/oodle2
 
 " Indent styles
 command CbInd set ts=4 sts=4 sw=4 noet
@@ -101,4 +102,26 @@ command FgInd set ts=4 sts=4 sw=4 et
 command JrInd set ts=2 sts=2 sw=2 et
 command SbInd set ts=3 sts=3 sw=3 et
 
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode=0
+
+" AsyncRun setup
+let g:asyncrun_open=12
+nmap <F7> :AsyncRun -save=2 fgb -onlywin64 -p<CR>
+
+" Map keys for tiler
+nmap <C-N> <plug>TilerNew
+nmap <C-C> <plug>TilerClose
+nmap <C-Space> <Plug>TilerFocus
+nmap <C-W>. <plug>TilerRotateForwards
+nmap <C-W>, <plug>TilerRotateBackwards
+nmap <C-J> :wincmd j<CR>
+nmap <C-K> :wincmd k<CR>
+nmap <C-L> :wincmd l<CR>
+nmap <C-H> :wincmd h<CR>
+
+let g:tiler#layout = 'left'
+let g:tiler#master#size = 50
+let g:tiler#popup#windows = {
+\ 'quickfix': { 'position': 'bottom', 'size': 12, 'filetype': 'qf', 'order': 1 },
+\ 'nerdtree': { 'position': 'left', 'size': 20, 'filetype': 'nerdtree', 'order': 2 },
+\ }
