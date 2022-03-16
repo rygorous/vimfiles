@@ -69,7 +69,8 @@ set wildignore=*.o,*.obj,*.a,*.lib,*.exe,*.pdb,*.map
 " Use Ripgrep when available
 if executable("rg")
     set grepprg=rg\ --color\ never
-    let g:ctrlp_user_command = 'rg --files --color never -g "" %s'
+    let g:ctrlp_user_command='rg --files --color never -g "" %s'
+    let $FZF_DEFAULT_COMMAND='rg --files --color never -g ""'
 endif
 
 " NERDTree config
@@ -102,16 +103,22 @@ command FgInd set ts=4 sts=4 sw=4 et
 command JrInd set ts=2 sts=2 sw=2 et
 command SbInd set ts=3 sts=3 sw=3 et
 
+" Old CtrlP setup
 let g:ctrlp_working_path_mode=0
+
+" New FZF setup
+let g:fzf_preview_window=[]
+nmap <C-P> :Files<CR>
 
 " AsyncRun setup
 let g:asyncrun_open=12
-nmap <F7> :AsyncRun -save=2 fgb -onlywin64 -p<CR>
+let g:cdepbuildtype='-onlywin64 -r'
+nmap <F7> :AsyncRun -save=2 fgb <C-R>=cdepbuildtype<CR><CR>
 
 " Map keys for tiler
 nmap <C-N> <plug>TilerNew
 nmap <C-C> <plug>TilerClose
-nmap <C-Space> <Plug>TilerFocus
+nmap <C-Space> <plug>TilerFocus
 nmap <C-W>. <plug>TilerRotateForwards
 nmap <C-W>, <plug>TilerRotateBackwards
 nmap <C-J> :wincmd j<CR>
@@ -125,3 +132,5 @@ let g:tiler#popup#windows = {
 \ 'quickfix': { 'position': 'bottom', 'size': 12, 'filetype': 'qf', 'order': 1 },
 \ 'nerdtree': { 'position': 'left', 'size': 20, 'filetype': 'nerdtree', 'order': 2 },
 \ }
+
+
